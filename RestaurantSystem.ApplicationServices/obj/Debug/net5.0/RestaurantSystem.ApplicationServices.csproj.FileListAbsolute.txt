@@ -1,0 +1,15 @@
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.deps.json
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\ref\RestaurantSystem.ApplicationServices.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystemDataAccess.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystemDataAccess.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.csproj.AssemblyReference.cache
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.AssemblyInfoInputs.cache
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.AssemblyInfo.cs
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\ref\RestaurantSystem.ApplicationServices.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.csproj.CopyComplete
