@@ -9,7 +9,7 @@ namespace RestaurantSystemDataAccess.CQRS
 {
     public class CommandExecutor : ICommandExecutor
     {
-        OrdersStorageContext context;
+        private readonly OrdersStorageContext context;
 
         public CommandExecutor(OrdersStorageContext context) => this.context = context;
         public Task<TResult> Execute<TParameter, TResult>(CommandBase<TParameter, TResult> command)
