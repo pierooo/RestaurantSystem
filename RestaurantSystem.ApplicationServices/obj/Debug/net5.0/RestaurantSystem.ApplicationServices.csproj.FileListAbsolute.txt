@@ -12,3 +12,4 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\ref\RestaurantSystem.ApplicationServices.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.csproj.CopyComplete

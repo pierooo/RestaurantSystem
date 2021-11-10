@@ -1,25 +1,18 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantSystemDataAccess.Entities
+namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class Order : EntityBase
+    public class AddOrderRequest : IRequest<AddOrderResponse>
     {
-        public Employee Employee { get; set; }
         public int EmployeeID { get; set; }
-        public RestaurantTable RestaurantTable { get; set; }
         public int RestaurantTableID { get; set; }
-
-        public List<OrderDetails> OrdersDetails { get; set; }
-
         public DateTime OrderDate { get; set; }
         public decimal TotalPrice { get; set; }
-        [MaxLength(500)]
         public string Description { get; set; }
-
     }
 }

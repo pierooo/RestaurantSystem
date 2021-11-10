@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RestaurantSystem.ApplicationServices.API.Domain;
 using RestaurantSystem.ApplicationServices.API.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace RestaurantSystem.ApplicationServices.Mappings
     {
         public RestaurantTablesProfile()
         {
+            this.CreateMap<AddRestaurantTableRequest, RestaurantSystemDataAccess.Entities.RestaurantTable>()
+                .ForMember(x => x.Description, y => y.MapFrom(z => z.Description));
             this.CreateMap<RestaurantSystemDataAccess.Entities.RestaurantTable, RestaurantTable>()
                 .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.Description, y => y.MapFrom(z => z.Description));

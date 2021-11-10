@@ -22,5 +22,12 @@ namespace RestaurantSystem.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
+        [HttpPost]
+        [Route("")]
+        public async Task<IActionResult> AddRestaurantTable([FromBody] AddRestaurantTableRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
     }
 }

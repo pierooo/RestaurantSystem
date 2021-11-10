@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RestaurantSystem.ApplicationServices.API.Domain;
 using RestaurantSystem.ApplicationServices.API.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,14 @@ namespace RestaurantSystem.ApplicationServices.Mappings
     {
         public OrdersDetailsProfile()
         {
+            this.CreateMap<AddOrderDetailsRequest, RestaurantSystemDataAccess.Entities.OrderDetails>()
+                .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
+                .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
+                .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
+                .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));
             this.CreateMap<RestaurantSystemDataAccess.Entities.OrderDetails, OrderDetails>()
-                .ForMember(x => x.Order, y => y.MapFrom(z => z.Order.ID))
-                .ForMember(x => x.Product, y => y.MapFrom(z => z.Product.ID))
+                .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
+                .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
                 .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
                 .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));
         }
