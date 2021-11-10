@@ -16,7 +16,7 @@ namespace RestaurantSystem.ApplicationServices.Mappings
             this.CreateMap<AddProductRequest, RestaurantSystemDataAccess.Entities.Product>()
             .ForMember(x => x.ProductName, y => y.MapFrom(z => z.ProductName))
             .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
-            //.ForMember(x => x.Category.ID, y => y.MapFrom(z => z.CategoryID))
+            .ForMember(x => x.CategoryID, y => y.MapFrom(z => z.CategoryID))
 ;
 
             this.CreateMap<RestaurantSystemDataAccess.Entities.Product, Product>()

@@ -12,8 +12,7 @@ namespace RestaurantSystemDataAccess.CQRS.Queries
     {
         public override async Task<List<Product>> Execute(OrdersStorageContext context)
         {
-            var products = await context.Products
-                .Include(x => x.Category).ToListAsync();
+            var products = await context.Products.Include(x => x.Category).ToListAsync();
             return products;
         }
     }
