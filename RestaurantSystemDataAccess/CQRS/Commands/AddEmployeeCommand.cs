@@ -9,7 +9,7 @@ namespace RestaurantSystemDataAccess.CQRS.Commands
 {
     public class AddEmployeeCommand : CommandBase<Employee, Employee>
     {
-        public async override Task<Employee> Exetuce(OrdersStorageContext context)
+        public async override Task<Employee> Execute(OrdersStorageContext context)
         {
             await context.Employees.AddAsync(this.Parameter);
             await context.SaveChangesAsync();

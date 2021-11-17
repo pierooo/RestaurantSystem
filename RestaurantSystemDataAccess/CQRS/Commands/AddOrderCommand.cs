@@ -9,7 +9,7 @@ namespace RestaurantSystemDataAccess.CQRS.Commands
 {
     public class AddOrderCommand : CommandBase<Order, Order>
     {
-        public async override Task<Order> Exetuce(OrdersStorageContext context)
+        public async override Task<Order> Execute(OrdersStorageContext context)
         {
             await context.Orders.AddAsync(this.Parameter);
             await context.SaveChangesAsync();

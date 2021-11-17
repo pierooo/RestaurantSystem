@@ -14,7 +14,7 @@ namespace RestaurantSystemDataAccess.CQRS
         public CommandExecutor(OrdersStorageContext context) => this.context = context;
         public Task<TResult> Execute<TParameter, TResult>(CommandBase<TParameter, TResult> command)
         {
-            return command.Exetuce(this.context);
+            return command.Execute(this.context);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace RestaurantSystemDataAccess.CQRS.Commands
     public abstract class CommandBase<TParameter, TResult>
     {
         public TParameter Parameter { get;set;}
-        public abstract Task<TResult> Exetuce(OrdersStorageContext context);
+        public abstract Task<TResult> Execute(OrdersStorageContext context);
 
     }
 }

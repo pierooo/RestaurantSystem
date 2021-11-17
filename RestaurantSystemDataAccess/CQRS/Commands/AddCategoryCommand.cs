@@ -10,7 +10,7 @@ namespace RestaurantSystemDataAccess.CQRS.Commands
     public class AddCategoryCommand : CommandBase<Category, Category>
     {
 
-        public async override Task<Category> Exetuce(OrdersStorageContext context)
+        public async override Task<Category> Execute(OrdersStorageContext context)
         {
             await context.Categories.AddAsync(this.Parameter);
             await context.SaveChangesAsync();
