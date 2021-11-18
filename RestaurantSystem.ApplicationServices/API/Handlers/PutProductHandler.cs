@@ -31,11 +31,11 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<PutProductResponse> Handle(PutProductRequest request, CancellationToken cancellationToken)
         {
-            var isProductInDbQuery = new GetProductByIdQuery()
+            var isProductInDb = new GetProductByIdQuery()
             {
                 ProductID = request.ProductID
             };
-            var productID = await queryExecutor.Execute(isProductInDbQuery);
+            var productID = await queryExecutor.Execute(isProductInDb);
             if (productID == null)
             {
                 return null;

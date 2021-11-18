@@ -40,5 +40,12 @@ namespace RestaurantSystem.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> PutCategory([FromBody] PutCategoryRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
     }
 }
