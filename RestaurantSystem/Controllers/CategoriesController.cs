@@ -47,5 +47,16 @@ namespace RestaurantSystem.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
+        [HttpDelete]
+        [Route("{categoryID}")]
+        public async Task<IActionResult> DeleteCategory([FromRoute] int categoryID)
+        {
+            var request = new DeleteCategoryRequest()
+            {
+                CategoryID = categoryID
+            };
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
     }
 }

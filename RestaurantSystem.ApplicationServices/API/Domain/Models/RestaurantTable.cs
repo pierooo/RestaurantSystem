@@ -8,7 +8,7 @@ namespace RestaurantSystem.ApplicationServices.API.Domain.Models
 {
     public class RestaurantTable
     {
-        public int ID { get; set; }
+        public int ResturantTableID { get; set; }
         public string Description { get; set; }
     }
 }

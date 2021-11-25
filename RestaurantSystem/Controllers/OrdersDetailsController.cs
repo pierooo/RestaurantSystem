@@ -51,5 +51,23 @@ namespace RestaurantSystem.Controllers
             var response = await this.mediator.Send(request);
             return this.Ok(response);
         }
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> PutOrderDetails([FromBody] PutOrderDetailsRequest request)
+        {
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
+        [HttpDelete]
+        [Route("{orderDetailsID}")]
+        public async Task<IActionResult> DeleteOrderDetails([FromRoute] int orderDetailsID)
+        {
+            var request = new DeleteOrderDetailsRequest()
+            {
+                OrderDetailsID = orderDetailsID
+            };
+            var response = await this.mediator.Send(request);
+            return this.Ok(response);
+        }
     }
 }
