@@ -10,53 +10,48 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class CategoriesController : ControllerBase
+    public class CategoriesController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public CategoriesController(IMediator mediator) => this.mediator = mediator;
-
+        public CategoriesController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllCategories([FromQuery] GetCategoriesRequest request)
+        public Task<IActionResult> GetAllCategories([FromQuery] GetCategoriesRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetCategoriesRequest, GetCategoriesResponse>(request);
         }
         [HttpGet]
         [Route("{categoryID}")]
-        public async Task<IActionResult> GetCategoryById([FromRoute] int categoryID)
+        public Task<IActionResult> GetCategoryById([FromRoute] int categoryID)
         {
             var request = new GetCategoryByIdRequest()
             {
                 CategoryID = categoryID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetCategoryByIdRequest, GetCategoryByIdResponse>(request);
         }
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddCategory([FromBody] AddCategoryRequest request)
+        public Task<IActionResult> AddCategory([FromBody] AddCategoryRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddCategoryRequest, AddCategoryResponse>(request);
         }
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutCategory([FromBody] PutCategoryRequest request)
+        public Task<IActionResult> PutCategory([FromBody] PutCategoryRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutCategoryRequest, PutCategoryResponse>(request);
         }
         [HttpDelete]
         [Route("{categoryID}")]
-        public async Task<IActionResult> DeleteCategory([FromRoute] int categoryID)
+        public Task<IActionResult> DeleteCategory([FromRoute] int categoryID)
         {
             var request = new DeleteCategoryRequest()
             {
                 CategoryID = categoryID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteCategoryRequest, DeleteCategoryResponse>(request);
         }
     }
 }

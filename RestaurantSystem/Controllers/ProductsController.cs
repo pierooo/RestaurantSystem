@@ -10,54 +10,49 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public ProductsController(IMediator mediator) => this.mediator = mediator;
-
+        public ProductsController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllProducts([FromQuery] GetProductsRequest request)
+        public Task<IActionResult> GetAllProducts([FromQuery] GetProductsRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetProductsRequest, GetProductsResponse>(request);
         }
         [HttpGet]
         [Route("{productID}")]
-        public async Task<IActionResult> GetProductByID([FromRoute] int productID)
+        public Task<IActionResult> GetProductByID([FromRoute] int productID)
         {
             var request = new GetProductByIdRequest()
             {
                 ProductID = productID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetProductByIdRequest, GetProductByIdResponse>(request);
         }
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddProduct([FromBody] AddProductRequest request)
+        public Task<IActionResult> AddProduct([FromBody] AddProductRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddProductRequest, AddProductResponse>(request);
         }
-
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutProduct([FromBody] PutProductRequest request)
+        public Task<IActionResult> PutProduct([FromBody] PutProductRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutProductRequest, PutProductResponse>(request);
         }
         [HttpDelete]
         [Route("{productID}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] int productID)
+        public Task<IActionResult> DeleteProduct([FromRoute] int productID)
         {
             var request = new DeleteProductRequest()
             {
                 ProductID = productID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteProductRequest, DeleteProductResponse>(request);
+
         }
     }
 }

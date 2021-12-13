@@ -66,3 +66,6 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\RestaurantSystemDataAccess.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\RestaurantSystemDataAccess.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll

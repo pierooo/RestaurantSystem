@@ -18,6 +18,8 @@ using RestaurantSystem.ApplicationServices.API.Domain.Models;
 using MediatR;
 using RestaurantSystem.ApplicationServices.Mappings;
 using RestaurantSystemDataAccess.CQRS;
+using FluentValidation.AspNetCore;
+using RestaurantSystem.ApplicationServices.API.Validators;
 
 namespace RestaurantSystem
 {
@@ -34,6 +36,11 @@ namespace RestaurantSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            services.AddMvcCore().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddProductRequestValidator>());
             services.AddTransient<IQueryExecutor, QueryExecutor>();
             services.AddTransient<ICommandExecutor, CommandExecutor>();
             services.AddAutoMapper(typeof(ProductsProfile).Assembly);

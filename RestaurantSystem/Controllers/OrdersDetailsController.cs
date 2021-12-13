@@ -10,64 +10,58 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class OrdersDetailsController : ControllerBase
+    public class OrdersDetailsController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public OrdersDetailsController(IMediator mediator) => this.mediator = mediator;
-
+        public OrdersDetailsController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllOrdersDetails([FromQuery] GetOrdersDetailsRequest request)
+        public Task<IActionResult> GetAllOrdersDetails([FromQuery] GetOrdersDetailsRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetOrdersDetailsRequest, GetOrdersDetailsResponse>(request);
         }
         [HttpGet]
         [Route("GetByOrderDetailsId/{orderDetailsID}")]
-        public async Task<IActionResult> GetOrdersDetailsById([FromRoute] int orderDetailsID)
+        public Task<IActionResult> GetOrdersDetailsById([FromRoute] int orderDetailsID)
         {
             var request = new GetOrderDetailsByIdRequest()
             {
                 OrderDetailsID = orderDetailsID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetOrderDetailsByIdRequest, GetOrderDetailsByIdResponse>(request);
         }
         [HttpGet]
         [Route("GetByOrderId/{orderID}")]
-        public async Task<IActionResult> GetOrdersDetailsByOrderId([FromRoute] int orderID)
+        public Task<IActionResult> GetOrdersDetailsByOrderId([FromRoute] int orderID)
         {
             var request = new GetOrdersDetailsByOrderIdRequest()
             {
                 OrderID = orderID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetOrdersDetailsByOrderIdRequest, GetOrdersDetailsByOrderIdResponse>(request);
         }
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddOrderDetails([FromBody] AddOrderDetailsRequest request)
+        public Task<IActionResult> AddOrderDetails([FromBody] AddOrderDetailsRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddOrderDetailsRequest, AddOrderDetailsResponse>(request);
         }
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutOrderDetails([FromBody] PutOrderDetailsRequest request)
+        public Task<IActionResult> PutOrderDetails([FromBody] PutOrderDetailsRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutOrderDetailsRequest, PutOrderDetailsResponse>(request);
         }
         [HttpDelete]
         [Route("{orderDetailsID}")]
-        public async Task<IActionResult> DeleteOrderDetails([FromRoute] int orderDetailsID)
+        public Task<IActionResult> DeleteOrderDetails([FromRoute] int orderDetailsID)
         {
             var request = new DeleteOrderDetailsRequest()
             {
                 OrderDetailsID = orderDetailsID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteOrderDetailsRequest, DeleteOrderDetailsResponse>(request);
         }
     }
 }

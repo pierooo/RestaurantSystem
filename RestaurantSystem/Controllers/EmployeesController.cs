@@ -10,53 +10,48 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class EmployeesController : ControllerBase
+    public class EmployeesController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public EmployeesController(IMediator mediator) => this.mediator = mediator;
-
+        public EmployeesController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllEmployees([FromQuery] GetEmployeesRequest request)
+        public Task<IActionResult> GetAllEmployees([FromQuery] GetEmployeesRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return HandleRequest<GetEmployeesRequest, GetEmployeesResponse>(request);
         }
         [HttpGet]
         [Route("{employeeID}")]
-        public async Task<IActionResult> GetEmployeeByID([FromRoute] int employeeID)
+        public Task<IActionResult> GetEmployeeByID([FromRoute] int employeeID)
         {
             var request = new GetEmployeeByIdRequest()
             {
                 EmployeeID = employeeID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetEmployeeByIdRequest, GetEmployeeByIdResponse>(request);
         }
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddEmployee([FromBody] AddEmployeeRequest request)
+        public Task<IActionResult> AddEmployee([FromBody] AddEmployeeRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddEmployeeRequest, AddEmployeeResponse>(request);
         }
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutEmployee([FromBody] PutEmployeeRequest request)
+        public Task<IActionResult> PutEmployee([FromBody] PutEmployeeRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutEmployeeRequest, PutEmployeeResponse>(request);
         }
         [HttpDelete]
         [Route("{employeeID}")]
-        public async Task<IActionResult> DeleteEmployee([FromRoute] int employeeID)
+        public Task<IActionResult> DeleteEmployee([FromRoute] int employeeID)
         {
             var request = new DeleteEmployeeRequest()
             {
                 EmployeeID = employeeID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteEmployeeRequest, DeleteEmployeeResponse>(request);
         }
 
     }

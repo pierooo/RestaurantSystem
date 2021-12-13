@@ -10,54 +10,49 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class RestaurantTablesController : ControllerBase
+    public class RestaurantTablesController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public RestaurantTablesController(IMediator mediator) => this.mediator = mediator;
-
+        public RestaurantTablesController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllRestaurantTables([FromQuery] GetRestaurantTablesRequest request)
+        public Task<IActionResult> GetAllRestaurantTables([FromQuery] GetRestaurantTablesRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetRestaurantTablesRequest, GetRestaurantTablesResponse>(request);
         }
         [HttpGet]
         [Route("{restaurantTableID}")]
-        public async Task<IActionResult> GetRestaurantTableById([FromRoute] int restaurantTableID)
+        public Task<IActionResult> GetRestaurantTableById([FromRoute] int restaurantTableID)
         {
             var request = new GetRestaurantTableByIdRequest
             {
                 RestaurantTableID = restaurantTableID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetRestaurantTableByIdRequest, GetRestaurantTableByIdResponse>(request);
         }
 
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddRestaurantTable([FromBody] AddRestaurantTableRequest request)
+        public Task<IActionResult> AddRestaurantTable([FromBody] AddRestaurantTableRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddRestaurantTableRequest, AddRestaurantTableResponse>(request);
         }
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutRestaurantTable([FromBody] PutRestaurantTableRequest request)
+        public Task<IActionResult> PutRestaurantTable([FromBody] PutRestaurantTableRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutRestaurantTableRequest, PutRestaurantTableResponse>(request);
         }
         [HttpDelete]
         [Route("{restaurantTableID}")]
-        public async Task<IActionResult> DeleteRestaurantTable([FromRoute] int restaurantTableID)
+        public Task<IActionResult> DeleteRestaurantTable([FromRoute] int restaurantTableID)
         {
             var request = new DeleteRestaurantTableRequest()
             {
                 RestaurantTableID = restaurantTableID
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteRestaurantTableRequest, DeleteRestaurantTableResponse>(request);
         }
     }
 }

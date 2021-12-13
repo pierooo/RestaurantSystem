@@ -10,53 +10,48 @@ namespace RestaurantSystem.Controllers
 {
     [Controller]
     [Route("[controller]")]
-    public class OrdersController : ControllerBase
+    public class OrdersController : ApiControllerBase
     {
-        private readonly IMediator mediator;
-        public OrdersController(IMediator mediator) => this.mediator = mediator;
-
+        public OrdersController(IMediator mediator) : base(mediator)
+        {
+        }
         [HttpGet]
         [Route("")]
-        public async Task<IActionResult> GetAllOrders([FromQuery] GetOrdersRequest request)
+        public Task<IActionResult> GetAllOrders([FromQuery] GetOrdersRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetOrdersRequest, GetOrdersResponse>(request);
         }
         [HttpGet]
         [Route("{orderId}")]
-        public async Task<IActionResult> GetOrderById([FromRoute] int orderId)
+        public Task<IActionResult> GetOrderById([FromRoute] int orderId)
         {
             var request = new GetOrderByIdRequest()
             {
                 OrderID = orderId
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<GetOrderByIdRequest, GetOrderByIdResponse>(request);
         }
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> AddOrder([FromBody] AddOrderRequest request)
+        public Task<IActionResult> AddOrder([FromBody] AddOrderRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<AddOrderRequest, AddOrderResponse>(request);
         }
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> PutOrder([FromBody] PutOrderRequest request)
+        public Task<IActionResult> PutOrder([FromBody] PutOrderRequest request)
         {
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<PutOrderRequest, PutOrderResponse>(request);
         }
         [HttpDelete]
         [Route("{orderId}")]
-        public async Task<IActionResult> DeleteOrder([FromRoute] int orderId)
+        public Task<IActionResult> DeleteOrder([FromRoute] int orderId)
         {
             var request = new DeleteOrderRequest()
             {
                 OrderID = orderId
             };
-            var response = await this.mediator.Send(request);
-            return this.Ok(response);
+            return this.HandleRequest<DeleteOrderRequest, DeleteOrderResponse>(request);
         }
     }
 }
