@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "biwGEAa2KwB/O8BI0dxGE4OTD0/xoLU8iWcTzUcn2QWxdM5NdhPXHatB26I73lgdOHmEHDphLp1L/X/mAwzqdA==",
+  "dgSpecHash": "sLRqaMESRCophFtTdjBOktq7iTFEIX1u5QpJI8CmctZg315X0gqy7sAtQzeA3bRataUD9rU+gKkjp7PwkoOwNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,9 @@
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\nlog\\4.7.13\\nlog.4.7.13.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

@@ -14,6 +14,7 @@ namespace RestaurantSystem.ApplicationServices.API.Validators
         {
             this.RuleFor(x => x.UnitPrice).InclusiveBetween(0,5000);
             this.RuleFor(x => x.ProductName).Length(1,200);
+            this.RuleFor(x => x.CategoryID).InclusiveBetween(0,500);
         }
     }
 }

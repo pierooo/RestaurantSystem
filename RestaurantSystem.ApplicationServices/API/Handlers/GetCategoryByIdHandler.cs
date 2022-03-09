@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS.Queries;
 using System;
@@ -29,6 +30,13 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
                 CategoryID = request.CategoryID
             };
             var category = await queryExecutor.Execute(query);
+            if (category == null)
+            {
+                return new GetCategoryByIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedCategory = this.mapper.Map<Domain.Models.Category>(category);
 
             var response = new GetCategoryByIdResponse()

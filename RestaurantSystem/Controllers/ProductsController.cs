@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RestaurantSystem.ApplicationServices.API.Domain;
 using System;
 using System.Collections.Generic;
@@ -8,12 +10,14 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Controllers
 {
+    [Authorize]
     [Controller]
     [Route("[controller]")]
     public class ProductsController : ApiControllerBase
     {
-        public ProductsController(IMediator mediator) : base(mediator)
+        public ProductsController(IMediator mediator, ILogger<ProductsController> logger) : base(mediator)
         {
+            logger.LogInformation("We are in ProductsController");
         }
         [HttpGet]
         [Route("")]

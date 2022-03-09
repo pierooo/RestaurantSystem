@@ -20,6 +20,8 @@ using RestaurantSystem.ApplicationServices.Mappings;
 using RestaurantSystemDataAccess.CQRS;
 using FluentValidation.AspNetCore;
 using RestaurantSystem.ApplicationServices.API.Validators;
+using RestaurantSystem.Authentication;
+using Microsoft.AspNetCore.Authentication;
 
 namespace RestaurantSystem
 {
@@ -40,6 +42,8 @@ namespace RestaurantSystem
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
+            services.AddAuthentication("BasicAuthentication").
+                AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             services.AddMvcCore().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddProductRequestValidator>());
             services.AddTransient<IQueryExecutor, QueryExecutor>();
             services.AddTransient<ICommandExecutor, CommandExecutor>();
@@ -68,6 +72,8 @@ namespace RestaurantSystem
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

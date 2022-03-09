@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Queries;
@@ -31,8 +32,14 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
                 ProductID = request.ProductID
             };
             var product = await this.queryExecutor.Execute(query);
+            if(product == null)
+            {
+                return new GetProductByIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedProduct = this.mapper.Map<Domain.Models.Product>(product);
-
             var response = new GetProductByIdResponse()
             {
                 Data = mappedProduct

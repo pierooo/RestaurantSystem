@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Validators
 {
-    public class AddCategoryRequestValidator : AbstractValidator<AddCategoryRequest>
+    public class AddEmployeeRequestValidator : AbstractValidator<AddEmployeeRequest>
     {
-        public AddCategoryRequestValidator()
+        public AddEmployeeRequestValidator()
         {
-            this.RuleFor(x => x.CategoryName).Length(1,200);
-            this.RuleFor(x => x.Description).Length(1,500);
+            this.RuleFor(x => x.LastName).Length(1,250);
+            this.RuleFor(x => x.FirstName).Length(1, 250);
         }
     }
 }

@@ -44,27 +44,19 @@ namespace RestaurantSystem.Controllers
             return StatusCode((int)httpCode,errorModel);
         }
 
-        private object GetHttpStatusCode(string error)
+        private static HttpStatusCode GetHttpStatusCode(string error)
         {
-            switch (error)
+            return error switch
             {
-                case ErrorType.NotFound:
-                    return HttpStatusCode.NotFound;
-                case ErrorType.InternalServerError:
-                    return HttpStatusCode.InternalServerError;
-                case ErrorType.Unautorized:
-                    return HttpStatusCode.Unauthorized;
-                case ErrorType.RequestTooLarge:
-                    return HttpStatusCode.RequestEntityTooLarge;
-                case ErrorType.UnSupportedMediaType:
-                    return HttpStatusCode.UnsupportedMediaType;
-                case ErrorType.UnSupportedMethod:
-                    return HttpStatusCode.MethodNotAllowed;
-                case ErrorType.TooManyRequest:
-                    return HttpStatusCode.TooManyRequests;
-                default:
-                    return HttpStatusCode.BadRequest;
-            }
+                ErrorType.NotFound => HttpStatusCode.NotFound,
+                ErrorType.InternalServerError => HttpStatusCode.InternalServerError,
+                ErrorType.Unautorized => HttpStatusCode.Unauthorized,
+                ErrorType.RequestTooLarge => HttpStatusCode.RequestEntityTooLarge,
+                ErrorType.UnSupportedMediaType => HttpStatusCode.UnsupportedMediaType,
+                ErrorType.UnSupportedMethod => HttpStatusCode.MethodNotAllowed,
+                ErrorType.TooManyRequest => HttpStatusCode.TooManyRequests,
+                _ => HttpStatusCode.BadRequest,
+            };
         }
     }
 }

@@ -2,6 +2,7 @@
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
 using RestaurantSystem.ApplicationServices.API.Domain.Models;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS.Queries;
 using System;
@@ -31,6 +32,13 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
                 OrderID = request.OrderID
             };
             var order = await this.queryExecutor.Execute(query);
+            if (order == null)
+            {
+                return new GetOrderByIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedOrder = this.mapper.Map<Domain.Models.Order>(order);
 
             var response = new GetOrderByIdResponse()
