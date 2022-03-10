@@ -73,3 +73,5 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\NLog.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\NLog.Extensions.Logging.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\Components\PasswordHash\IPasswordHash.cs
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium2\RestaurantSystem\RestaurantSystem\bin\Debug\net5.0\Components\PasswordHash\PasswordHash.cs

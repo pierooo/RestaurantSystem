@@ -29,6 +29,7 @@ namespace RestaurantSystemDataAccess.Entities
         public string PostalCode { get; set; }
         [MaxLength(20)]
         public string PhoneNumber { get; set; }
+        public string Salt { get; set; }
         public List<Order> Orders { get; set; }
 
     }

@@ -18,4 +18,13 @@
     <ProjectReference Include="..\RestaurantSystemDataAccess\RestaurantSystemDataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Components\PasswordHash\IPasswordHash.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Components\PasswordHash\PasswordHash.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

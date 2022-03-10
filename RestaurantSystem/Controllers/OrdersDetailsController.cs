@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantSystem.ApplicationServices.API.Domain;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.Controllers
 {
+    [Authorize]
     [Controller]
     [Route("[controller]")]
     public class OrdersDetailsController : ApiControllerBase

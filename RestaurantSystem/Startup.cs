@@ -22,6 +22,7 @@ using FluentValidation.AspNetCore;
 using RestaurantSystem.ApplicationServices.API.Validators;
 using RestaurantSystem.Authentication;
 using Microsoft.AspNetCore.Authentication;
+using RestaurantSystem.ApplicationServices.Components.PasswordHash;
 
 namespace RestaurantSystem
 {
@@ -45,6 +46,7 @@ namespace RestaurantSystem
             services.AddAuthentication("BasicAuthentication").
                 AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             services.AddMvcCore().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddProductRequestValidator>());
+            services.AddTransient<IPasswordHash, PasswordHash>();
             services.AddTransient<IQueryExecutor, QueryExecutor>();
             services.AddTransient<ICommandExecutor, CommandExecutor>();
             services.AddAutoMapper(typeof(ProductsProfile).Assembly);
