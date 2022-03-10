@@ -82,8 +82,7 @@ namespace RestaurantSystem.Authentication
             }
 
             var claims = new[] {
-                new Claim(ClaimTypes.NameIdentifier, user.ID.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Name, user.FirstName),
                 new Claim(ClaimTypes.Role, user.Role.ToString()),
             };
             var identity = new ClaimsIdentity(claims, Scheme.Name);

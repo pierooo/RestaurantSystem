@@ -17,5 +17,6 @@ namespace RestaurantSystem.ApplicationServices.API.ErrorHandling
         public const string UnSupportedMethod = "UnSupported_Method";
         public const string RequestTooLarge = "Request_Too_Large";
         public const string TooManyRequest = "Too_Many_Request";
+        public const string UsernameExists = "Username_Exists";
     }
 }

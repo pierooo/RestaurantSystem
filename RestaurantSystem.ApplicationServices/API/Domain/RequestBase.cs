@@ -1,5 +1,4 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class GetEmployeesRequest : RequestBase, IRequest<GetEmployeesResponse>
+    public class RequestBase
     {
+        public string AuthenticationName { get; set; }
+        public string AuthenticationRole { get; set; }
     }
 }

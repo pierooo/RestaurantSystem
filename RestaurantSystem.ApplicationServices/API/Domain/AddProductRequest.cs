@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class AddProductRequest : IRequest<AddProductResponse>
+    public class AddProductRequest : RequestBase, IRequest<AddProductResponse>
     {
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }

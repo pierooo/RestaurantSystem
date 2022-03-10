@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class PutEmployeeRequest : IRequest<PutEmployeeResponse>
+    public class PutEmployeeRequest : RequestBase, IRequest<PutEmployeeResponse>
     {
         public int EmployeeID { get; set; }
         public string LastName { get; set; }

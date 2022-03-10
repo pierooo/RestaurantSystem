@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class DeleteEmployeeRequest : IRequest<DeleteEmployeeResponse>
+    public class DeleteEmployeeRequest : RequestBase, IRequest<DeleteEmployeeResponse>
     {
         public int EmployeeID { get; set; }
     }

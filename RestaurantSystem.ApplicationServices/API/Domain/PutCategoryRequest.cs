@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class PutCategoryRequest : IRequest<PutCategoryResponse>
+    public class PutCategoryRequest : RequestBase, IRequest<PutCategoryResponse>
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
