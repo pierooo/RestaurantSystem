@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,32 +27,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteCategoryResponse> Handle(DeleteCategoryRequest request, CancellationToken cancellationToken)
         {
-            var isCategoryInDb = new GetCategoryByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                CategoryID = request.CategoryID
-            };
-            var category = await queryExecutor.Execute(isCategoryInDb);
-            if (category == null)
-            {
-                return null;
+                return new DeleteCategoryResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var command = new DeleteCategoryCommand()
+                var isCategoryInDb = new GetCategoryByIdQuery()
                 {
-                    Parameter = category
+                    CategoryID = request.CategoryID
                 };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteCategoryResponse();
-                if (responseFromDb == category)
+                var category = await queryExecutor.Execute(isCategoryInDb);
+                if (category == null)
                 {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteCategoryCommand()
+                    {
+                        Parameter = category
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteCategoryResponse();
+                    if (responseFromDb == category)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
             }
         }
     }

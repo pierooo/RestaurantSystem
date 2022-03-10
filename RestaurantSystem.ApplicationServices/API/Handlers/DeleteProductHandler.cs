@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,32 +27,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteProductResponse> Handle(DeleteProductRequest request, CancellationToken cancellationToken)
         {
-            var isProductInDb = new GetProductByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                ProductID = request.ProductID
-            };
-            var product = await queryExecutor.Execute(isProductInDb);
-            if (product == null)
-            {
-                return null;
+                return new DeleteProductResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var command = new DeleteProductCommand()
+                var isProductInDb = new GetProductByIdQuery()
                 {
-                    Parameter = product
+                    ProductID = request.ProductID
                 };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteProductResponse();
-                if (responseFromDb == product)
+                var product = await queryExecutor.Execute(isProductInDb);
+                if (product == null)
                 {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteProductCommand()
+                    {
+                        Parameter = product
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteProductResponse();
+                    if (responseFromDb == product)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
             }
         }
     }

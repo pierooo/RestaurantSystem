@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,13 +27,23 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         }
         public async Task<AddProductResponse> Handle(AddProductRequest request, CancellationToken cancellationToken)
         {
-            var product = this.mapper.Map<Product>(request);
-            var command = new AddProductCommand() { Parameter = product};
-            var productFromDb =  await this.commandExecutor.Execute(command);
-            return new AddProductResponse()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                Data = this.mapper.Map<Domain.Models.Product>(productFromDb)
-            };
+                return new AddProductResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
+            }
+            else
+            {
+                var product = this.mapper.Map<Product>(request);
+                var command = new AddProductCommand() { Parameter = product };
+                var productFromDb = await this.commandExecutor.Execute(command);
+                return new AddProductResponse()
+                {
+                    Data = this.mapper.Map<Domain.Models.Product>(productFromDb)
+                };
+            }
         }
     }
 }

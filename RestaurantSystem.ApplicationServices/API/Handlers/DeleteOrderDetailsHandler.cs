@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,32 +27,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteOrderDetailsResponse> Handle(DeleteOrderDetailsRequest request, CancellationToken cancellationToken)
         {
-            var isOrderDetailsInDb = new GetOrderDetailsByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                OrderDetailsID = request.OrderDetailsID
-            };
-            var orderDetails = await queryExecutor.Execute(isOrderDetailsInDb);
-            if (orderDetails == null)
-            {
-                return null;
+                return new DeleteOrderDetailsResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var command = new DeleteOrderDetailsCommand()
+                var isOrderDetailsInDb = new GetOrderDetailsByIdQuery()
                 {
-                    Parameter = orderDetails
+                    OrderDetailsID = request.OrderDetailsID
                 };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteOrderDetailsResponse();
-                if (responseFromDb == orderDetails)
+                var orderDetails = await queryExecutor.Execute(isOrderDetailsInDb);
+                if (orderDetails == null)
                 {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteOrderDetailsCommand()
+                    {
+                        Parameter = orderDetails
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteOrderDetailsResponse();
+                    if (responseFromDb == orderDetails)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
             }
         }
     }

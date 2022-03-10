@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -30,29 +31,39 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<PutRestaurantTableResponse> Handle(PutRestaurantTableRequest request, CancellationToken cancellationToken)
         {
-            var isRestaurantTableInDb = new GetRestaurantTableByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                RestaurantTableID = request.RestaurantTableID
-            };
-            var restaurantTableID = await queryExecutor.Execute(isRestaurantTableInDb);
-            if (restaurantTableID == null)
-            {
-                return null;
+                return new PutRestaurantTableResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var restaurantTableMappedFromRequest = mapper.Map<RestaurantTable>(request);
-                var command = new PutRestaurantTableCommand()
+                var isRestaurantTableInDb = new GetRestaurantTableByIdQuery()
                 {
-                    Parameter = restaurantTableMappedFromRequest
+                    RestaurantTableID = request.RestaurantTableID
                 };
-                var restaurantTableFromDb = await this.commandExecutor.Execute(command);
-                var mappedRestaurantTable = this.mapper.Map<Domain.Models.RestaurantTable>(restaurantTableFromDb);
-                var response = new PutRestaurantTableResponse()
+                var restaurantTableID = await queryExecutor.Execute(isRestaurantTableInDb);
+                if (restaurantTableID == null)
                 {
-                    Data = mappedRestaurantTable
-                };
-                return response;
+                    return null;
+                }
+                else
+                {
+                    var restaurantTableMappedFromRequest = mapper.Map<RestaurantTable>(request);
+                    var command = new PutRestaurantTableCommand()
+                    {
+                        Parameter = restaurantTableMappedFromRequest
+                    };
+                    var restaurantTableFromDb = await this.commandExecutor.Execute(command);
+                    var mappedRestaurantTable = this.mapper.Map<Domain.Models.RestaurantTable>(restaurantTableFromDb);
+                    var response = new PutRestaurantTableResponse()
+                    {
+                        Data = mappedRestaurantTable
+                    };
+                    return response;
+                }
             }
         }
     }

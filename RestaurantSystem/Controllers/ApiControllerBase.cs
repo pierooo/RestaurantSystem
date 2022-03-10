@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RestaurantSystem.Controllers
@@ -30,6 +31,13 @@ namespace RestaurantSystem.Controllers
                                     .Where(x => x.Value.Errors.Any())
                                     .Select(x => new { property = x.Key, errors = x.Value.Errors }));
             }
+
+            if (User.Claims.FirstOrDefault() != null)
+            {
+                (request as RequestBase).AuthenticationName = this.User.FindFirstValue(ClaimTypes.Name);
+                (request as RequestBase).AuthenticationRole = this.User.FindFirstValue(ClaimTypes.Role);
+            }
+
             var response = await this.mediator.Send(request);
             if(response.Error != null)
             {

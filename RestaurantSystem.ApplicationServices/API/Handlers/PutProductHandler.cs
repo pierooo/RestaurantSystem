@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -31,29 +32,39 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<PutProductResponse> Handle(PutProductRequest request, CancellationToken cancellationToken)
         {
-            var isProductInDb = new GetProductByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                ProductID = request.ProductID
-            };
-            var productID = await queryExecutor.Execute(isProductInDb);
-            if (productID == null)
-            {
-                return null;
+                return new PutProductResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
-            else 
+            else
             {
-                var productMappedFromRequest = this.mapper.Map<Product>(request);
-                var command = new PutProductCommand()
+                var isProductInDb = new GetProductByIdQuery()
                 {
-                    Parameter = productMappedFromRequest
+                    ProductID = request.ProductID
                 };
-                var productFromDb = await this.commandExecutor.Execute(command);
-                var mappedProduct = this.mapper.Map<Domain.Models.Product>(productFromDb);
-                var response = new PutProductResponse()
+                var productID = await queryExecutor.Execute(isProductInDb);
+                if (productID == null)
                 {
-                    Data = mappedProduct
-                };
-                return response;
+                    return null;
+                }
+                else
+                {
+                    var productMappedFromRequest = this.mapper.Map<Product>(request);
+                    var command = new PutProductCommand()
+                    {
+                        Parameter = productMappedFromRequest
+                    };
+                    var productFromDb = await this.commandExecutor.Execute(command);
+                    var mappedProduct = this.mapper.Map<Domain.Models.Product>(productFromDb);
+                    var response = new PutProductResponse()
+                    {
+                        Data = mappedProduct
+                    };
+                    return response;
+                }
             }
         }
     }

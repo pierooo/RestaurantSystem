@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
 using RestaurantSystemDataAccess.Entities;
@@ -25,13 +26,23 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         }
         public async Task<AddCategoryResponse> Handle(AddCategoryRequest request, CancellationToken cancellationToken)
         {
-            var category = this.mapper.Map<Category>(request);
-            var command = new AddCategoryCommand() { Parameter = category };
-            var categoryFromDb = await this.commandExecutor.Execute(command);
-            return new AddCategoryResponse()
+            if ( request.AuthenticationRole.ToString() == "Waiter")
             {
-                Data = this.mapper.Map<Domain.Models.Category>(categoryFromDb)
-            };
+                return new AddCategoryResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
+            }
+            else
+            {
+                var category = this.mapper.Map<Category>(request);
+                var command = new AddCategoryCommand() { Parameter = category };
+                var categoryFromDb = await this.commandExecutor.Execute(command);
+                return new AddCategoryResponse()
+                {
+                    Data = this.mapper.Map<Domain.Models.Category>(categoryFromDb)
+                };
+            }
         }
     }
 }

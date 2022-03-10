@@ -25,25 +25,35 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         }
         public async Task<GetEmployeeByIdResponse> Handle(GetEmployeeByIdRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetEmployeeByIdQuery()
-            {
-                EmployeeID = request.EmployeeID
-            };
-            var employee = await queryExecutor.Execute(query);
-            if (employee == null)
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
                 return new GetEmployeeByIdResponse()
                 {
-                    Error = new ErrorModel(ErrorType.NotFound)
+                    Error = new ErrorModel(ErrorType.Unautorized)
                 };
             }
-            var mappedOrder = this.mapper.Map<Domain.Models.Employee>(employee);
-
-            var response = new GetEmployeeByIdResponse()
+            else
             {
-                Data = mappedOrder
-            };
-            return response;
+                var query = new GetEmployeeByIdQuery()
+                {
+                    EmployeeID = request.EmployeeID
+                };
+                var employee = await queryExecutor.Execute(query);
+                if (employee == null)
+                {
+                    return new GetEmployeeByIdResponse()
+                    {
+                        Error = new ErrorModel(ErrorType.NotFound)
+                    };
+                }
+                var mappedOrder = this.mapper.Map<Domain.Models.Employee>(employee);
+
+                var response = new GetEmployeeByIdResponse()
+                {
+                    Data = mappedOrder
+                };
+                return response;
+            }
         }
     }
 }

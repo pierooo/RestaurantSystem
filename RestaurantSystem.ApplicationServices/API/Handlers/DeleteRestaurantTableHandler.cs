@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,32 +27,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteRestaurantTableResponse> Handle(DeleteRestaurantTableRequest request, CancellationToken cancellationToken)
         {
-            var isRestaurantTableInDb = new GetRestaurantTableByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                RestaurantTableID = request.RestaurantTableID
-            };
-            var restaurantTable = await queryExecutor.Execute(isRestaurantTableInDb);
-            if (restaurantTable == null)
-            {
-                return null;
+                return new DeleteRestaurantTableResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var command = new DeleteRestaurantTableCommand()
+                var isRestaurantTableInDb = new GetRestaurantTableByIdQuery()
                 {
-                    Parameter = restaurantTable
+                    RestaurantTableID = request.RestaurantTableID
                 };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteRestaurantTableResponse();
-                if (responseFromDb == restaurantTable)
+                var restaurantTable = await queryExecutor.Execute(isRestaurantTableInDb);
+                if (restaurantTable == null)
                 {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteRestaurantTableCommand()
+                    {
+                        Parameter = restaurantTable
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteRestaurantTableResponse();
+                    if (responseFromDb == restaurantTable)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -25,33 +26,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteEmployeeResponse> Handle(DeleteEmployeeRequest request, CancellationToken cancellationToken)
         {
-            var isEmployeeInDb = new GetEmployeeByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
+            {
+                return new DeleteEmployeeResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
+            }
+            else
+            {
+                var isEmployeeInDb = new GetEmployeeByIdQuery()
             {
                 EmployeeID = request.EmployeeID
             };
             var employee = await queryExecutor.Execute(isEmployeeInDb);
-            if (employee == null)
-            {
-                return null;
-            }
-            else
-            {
-                var command = new DeleteEmployeeCommand()
+                if (employee == null)
                 {
-                    Parameter = employee
-                };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteEmployeeResponse();
-                if (responseFromDb == employee)
-                {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteEmployeeCommand()
+                    {
+                        Parameter = employee
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteEmployeeResponse();
+                    if (responseFromDb == employee)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
-
             }
         }
     }

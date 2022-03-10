@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -26,32 +27,42 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<DeleteOrderResponse> Handle(DeleteOrderRequest request, CancellationToken cancellationToken)
         {
-            var isOrderInDb = new GetOrderByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                OrderID = request.OrderID
-            };
-            var order = await queryExecutor.Execute(isOrderInDb);
-            if (order == null)
-            {
-                return null;
+                return new DeleteOrderResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var command = new DeleteOrderCommand()
+                var isOrderInDb = new GetOrderByIdQuery()
                 {
-                    Parameter = order
+                    OrderID = request.OrderID
                 };
-                var responseFromDb = await this.commandExecutor.Execute(command);
-                var response = new DeleteOrderResponse();
-                if (responseFromDb == order)
+                var order = await queryExecutor.Execute(isOrderInDb);
+                if (order == null)
                 {
-                    response.Data = true;
+                    return null;
                 }
                 else
                 {
-                    response.Data = false;
+                    var command = new DeleteOrderCommand()
+                    {
+                        Parameter = order
+                    };
+                    var responseFromDb = await this.commandExecutor.Execute(command);
+                    var response = new DeleteOrderResponse();
+                    if (responseFromDb == order)
+                    {
+                        response.Data = true;
+                    }
+                    else
+                    {
+                        response.Data = false;
+                    }
+                    return response;
                 }
-                return response;
             }
         }
     }

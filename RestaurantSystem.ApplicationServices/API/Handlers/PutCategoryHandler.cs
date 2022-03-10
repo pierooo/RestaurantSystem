@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS;
 using RestaurantSystemDataAccess.CQRS.Commands;
@@ -29,29 +30,39 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
 
         public async Task<PutCategoryResponse> Handle(PutCategoryRequest request, CancellationToken cancellationToken)
         {
-            var isCategoryInDb = new GetCategoryByIdQuery()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                CategoryID = request.CategoryID
-            };
-            var categoryID = await queryExecutor.Execute(isCategoryInDb);
-            if(categoryID == null)
-            {
-                return null;
+                return new PutCategoryResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
             }
             else
             {
-                var categoryMappedFromRequest = this.mapper.Map<Category>(request);
-                var command = new PutCategoryCommand()
+                var isCategoryInDb = new GetCategoryByIdQuery()
                 {
-                    Parameter = categoryMappedFromRequest
+                    CategoryID = request.CategoryID
                 };
-                var categoryFromDb = await commandExecutor.Execute(command);
-                var mappedCategory = this.mapper.Map<Domain.Models.Category>(categoryFromDb);
-                var response = new PutCategoryResponse()
+                var categoryID = await queryExecutor.Execute(isCategoryInDb);
+                if (categoryID == null)
                 {
-                    Data = mappedCategory
-                };
-                return response;
+                    return null;
+                }
+                else
+                {
+                    var categoryMappedFromRequest = this.mapper.Map<Category>(request);
+                    var command = new PutCategoryCommand()
+                    {
+                        Parameter = categoryMappedFromRequest
+                    };
+                    var categoryFromDb = await commandExecutor.Execute(command);
+                    var mappedCategory = this.mapper.Map<Domain.Models.Category>(categoryFromDb);
+                    var response = new PutCategoryResponse()
+                    {
+                        Data = mappedCategory
+                    };
+                    return response;
+                }
             }
         }
     }
