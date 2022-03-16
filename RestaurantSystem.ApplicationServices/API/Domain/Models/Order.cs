@@ -12,7 +12,8 @@ namespace RestaurantSystem.ApplicationServices.API.Domain.Models
         public int EmployeeID { get; set; }
         public int RestaurantTableID { get; set; }
         public DateTime OrderDate { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal TotalPriceNetto { get; set; }
+        public decimal TotalPriceBrutto { get; set; }
         public string Description { get; set; }
     }
 }

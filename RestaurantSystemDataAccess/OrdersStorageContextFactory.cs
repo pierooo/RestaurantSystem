@@ -14,7 +14,7 @@ namespace RestaurantSystemDataAccess
         public OrdersStorageContext CreateDbContext([NotNull] string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<OrdersStorageContext>();
-            optionsBuilder.UseSqlServer(connectionString: "Data Source=PIOTR\\SQLEXPRESS;Initial Catalog=RestaurantSystemStorage;Integrated Security=True");
+            optionsBuilder.UseSqlServer(connectionString: "Data Source = PIOTR\\SQLEXPRESS; Initial Catalog = RestaurantSystemStorage; Integrated Security = True");
             return new OrdersStorageContext(optionsBuilder.Options);
         }
     }

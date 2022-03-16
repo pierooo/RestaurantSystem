@@ -17,7 +17,8 @@ namespace RestaurantSystemDataAccess.Entities
         public List<OrderDetails> OrdersDetails { get; set; }
 
         public DateTime OrderDate { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal TotalPriceNetto { get; set; }
+        public decimal TotalPriceBrutto { get; set; }
         [MaxLength(500)]
         public string Description { get; set; }
 

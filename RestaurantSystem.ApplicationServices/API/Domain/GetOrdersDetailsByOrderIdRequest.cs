@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class GetOrdersDetailsByOrderIdRequest : IRequest<GetOrdersDetailsByOrderIdResponse>
+    public class GetOrdersDetailsByOrderIdRequest : RequestBase, IRequest<GetOrdersDetailsByOrderIdResponse>
     {
         public int OrderID { get; set; }
     }

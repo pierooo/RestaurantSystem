@@ -17,17 +17,16 @@ namespace RestaurantSystem.ApplicationServices.Mappings
                 .ForMember(x => x.ID, y => y.MapFrom(z => z.OrderDetailsID))
                 .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
                 .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
-                .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
                 .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));
             this.CreateMap<AddOrderDetailsRequest, RestaurantSystemDataAccess.Entities.OrderDetails>()
                 .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
                 .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
-                .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
                 .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));
             this.CreateMap<RestaurantSystemDataAccess.Entities.OrderDetails, OrderDetails>()
                 .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
                 .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
-                .ForMember(x => x.UnitPrice, y => y.MapFrom(z => z.UnitPrice))
+                .ForMember(x => x.UnitPriceNetto, y => y.MapFrom(z => z.UnitPriceNetto))
+                .ForMember(x => x.VAT, y => y.MapFrom(z => z.VAT))
                 .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));
         }
     }

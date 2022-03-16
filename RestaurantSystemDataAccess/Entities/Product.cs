@@ -13,7 +13,8 @@ namespace RestaurantSystemDataAccess.Entities
         public string ProductName { get; set; }
         public Category Category { get; set; }
         public int CategoryID { get; set; }
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPriceNetto { get; set; }
+        public int VAT { get; set; }
         public int UnitsInStock { get; set; }
         public bool Discontinued { get; set; }
 

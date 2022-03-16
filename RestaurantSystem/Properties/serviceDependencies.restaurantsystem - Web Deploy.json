@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/restaurantsystem/databases/RestaurantSystemStorage",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:RestaurantDatabaseConnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

@@ -36,10 +36,10 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             else
             {
                 var isEmployeeInDb = new GetEmployeeByIdQuery()
-            {
-                EmployeeID = request.EmployeeID
-            };
-            var employee = await queryExecutor.Execute(isEmployeeInDb);
+                {
+                    EmployeeID = request.EmployeeID
+                };
+                var employee = await queryExecutor.Execute(isEmployeeInDb);
                 if (employee == null)
                 {
                     return null;

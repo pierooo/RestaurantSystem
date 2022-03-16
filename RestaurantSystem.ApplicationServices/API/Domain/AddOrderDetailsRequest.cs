@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class AddOrderDetailsRequest : IRequest<AddOrderDetailsResponse>
+    public class AddOrderDetailsRequest : RequestBase, IRequest<AddOrderDetailsResponse>
     {
         public int OrderID { get; set; }
 
         public int ProductID { get; set; }
-
-        public decimal UnitPrice { get; set; }
 
         public int Quantity { get; set; }
     }

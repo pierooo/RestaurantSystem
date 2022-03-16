@@ -112,7 +112,10 @@ namespace RestaurantSystemDataAccess.Migrations
                     b.Property<int>("RestaurantTableID")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TotalPrice")
+                    b.Property<decimal>("TotalPriceBrutto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("TotalPriceNetto")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ID");
@@ -140,8 +143,11 @@ namespace RestaurantSystemDataAccess.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<decimal>("UnitPriceNetto")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("VAT")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -169,10 +175,13 @@ namespace RestaurantSystemDataAccess.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<decimal>("UnitPriceNetto")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UnitsInStock")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VAT")
                         .HasColumnType("int");
 
                     b.HasKey("ID");

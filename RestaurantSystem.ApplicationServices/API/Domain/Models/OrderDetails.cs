@@ -13,7 +13,8 @@ namespace RestaurantSystem.ApplicationServices.API.Domain.Models
 
         public int ProductID { get; set; }
 
-        public decimal UnitPrice { get; set; }
+        public decimal UnitPriceNetto { get; set; }
+        public int VAT { get; set; }
 
         public int Quantity { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantSystem.ApplicationServices.API.Domain;
+using RestaurantSystem.ApplicationServices.API.ErrorHandling;
 using RestaurantSystemDataAccess;
 using RestaurantSystemDataAccess.CQRS.Queries;
 using RestaurantSystemDataAccess.Entities;
@@ -25,14 +26,24 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         }
         public async Task<GetEmployeesResponse> Handle(GetEmployeesRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetEmployeesQuery();
-            var employees = await this.queryExecutor.Execute(query);
-            var mappedEmployees = this.mapper.Map<List<Domain.Models.Employee>>(employees);
-            var response = new GetEmployeesResponse()
+            if (request.AuthenticationRole.ToString() == "Waiter")
             {
-                Data = mappedEmployees
-            };
-            return response;
+                return new GetEmployeesResponse()
+                {
+                    Error = new ErrorModel(ErrorType.Unautorized)
+                };
+            }
+            else
+            {
+                var query = new GetEmployeesQuery();
+                var employees = await this.queryExecutor.Execute(query);
+                var mappedEmployees = this.mapper.Map<List<Domain.Models.Employee>>(employees);
+                var response = new GetEmployeesResponse()
+                {
+                    Data = mappedEmployees
+                };
+                return response;
+            }
         }
     }
 }

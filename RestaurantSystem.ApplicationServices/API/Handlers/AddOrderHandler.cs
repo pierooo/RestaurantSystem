@@ -26,6 +26,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         public async Task<AddOrderResponse> Handle(AddOrderRequest request, CancellationToken cancellationToken)
         {
             var order = this.mapper.Map<Order>(request);
+            order.OrderDate = DateTime.Now;
             var command = new AddOrderCommand() { Parameter = order };
             var orderFromDb = await this.commandExecutor.Execute(command);
             return new AddOrderResponse()
