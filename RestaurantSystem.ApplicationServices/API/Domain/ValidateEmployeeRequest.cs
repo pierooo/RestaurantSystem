@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class DeleteCategoryRequest : RequestBase, IRequest<DeleteCategoryResponse>
+    public class ValidateEmployeeRequest : RequestBase, IRequest<ValidateEmployeeResponse>
     {
-        public int ID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

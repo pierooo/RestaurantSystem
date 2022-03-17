@@ -10,10 +10,10 @@ namespace RestaurantSystemDataAccess.CQRS.Queries
 {
     public class GetCategoryByIdQuery : QueryBase<Category>
     {
-        public int CategoryID { get; set; }
+        public int ID { get; set; }
         public override async Task<Category> Execute(OrdersStorageContext context)
         {
-            var category = await context.Categories.FirstOrDefaultAsync(x => x.ID == this.CategoryID);
+            var category = await context.Categories.FirstOrDefaultAsync(x => x.ID == this.ID);
             return category;
         }
     }

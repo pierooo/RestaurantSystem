@@ -32,7 +32,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         {
             var isOrderInDb = new GetOrderByIdQuery()
             {
-                OrderID = request.OrderID
+                ID = request.ID
             };
             var orderID = await queryExecutor.Execute(isOrderInDb);
             if (orderID == null)

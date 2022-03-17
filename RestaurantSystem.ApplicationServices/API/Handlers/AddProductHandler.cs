@@ -41,7 +41,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             {
                 var query = new GetCategoryByIdQuery()
                 {
-                    CategoryID = request.CategoryID
+                    ID = request.CategoryID
                 };
                 var category = this.queryExecutor.Execute(query);
                 if(category != null)

@@ -9,6 +9,6 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
 {
     public class GetRestaurantTableByIdRequest : RequestBase, IRequest<GetRestaurantTableByIdResponse>
     {
-        public int RestaurantTableID { get; set; }
+        public int ID { get; set; }
     }
 }

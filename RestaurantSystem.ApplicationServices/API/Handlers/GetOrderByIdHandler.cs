@@ -29,7 +29,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         {
             var query = new GetOrderByIdQuery()
             {
-                OrderID = request.OrderID
+                ID = request.ID
             };
             var order = await this.queryExecutor.Execute(query);
             if (order == null)

@@ -9,6 +9,6 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
 {
     public class GetCategoryByIdRequest : RequestBase, IRequest<GetCategoryByIdResponse>
     {
-        public int CategoryID { get; set; }
+        public int ID { get; set; }
     }
 }

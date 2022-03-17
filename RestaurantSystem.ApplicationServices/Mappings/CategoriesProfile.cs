@@ -14,7 +14,7 @@ namespace RestaurantSystem.ApplicationServices.Mappings
         public CategoriesProfile()
         {
             this.CreateMap<PutCategoryRequest, RestaurantSystemDataAccess.Entities.Category>()
-                .ForMember(x => x.ID, y => y.MapFrom(z => z.CategoryID))
+                .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.CategoryName, y => y.MapFrom(z => z.CategoryName))
                 .ForMember(x => x.Description, y => y.MapFrom(z => z.Description));
             this.CreateMap<AddCategoryRequest, RestaurantSystemDataAccess.Entities.Category>()

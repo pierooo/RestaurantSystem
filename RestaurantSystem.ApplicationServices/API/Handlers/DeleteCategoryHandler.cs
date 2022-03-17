@@ -38,7 +38,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             {
                 var isCategoryInDb = new GetCategoryByIdQuery()
                 {
-                    CategoryID = request.CategoryID
+                    ID = request.ID
                 };
                 var category = await queryExecutor.Execute(isCategoryInDb);
                 if (category == null)

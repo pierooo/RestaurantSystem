@@ -9,6 +9,6 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
 {
     public class DeleteProductRequest : RequestBase, IRequest<DeleteProductResponse>
     {
-        public int ProductID { get; set; }
+        public int ID { get; set; }
     }
 }

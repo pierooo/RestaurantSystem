@@ -9,7 +9,7 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
 {
     public class PutProductRequest : RequestBase, IRequest<PutProductResponse>
     {
-        public int ProductID { get; set; }
+        public int ID { get; set; }
         public string ProductName { get; set; }
         public decimal UnitPriceNetto { get; set; }
         public int VAT { get; set; }

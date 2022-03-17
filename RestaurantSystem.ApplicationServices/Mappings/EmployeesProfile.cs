@@ -14,7 +14,7 @@ namespace RestaurantSystem.ApplicationServices.Mappings
         public EmployeesProfile()
         {
             this.CreateMap<PutEmployeeRequest, RestaurantSystemDataAccess.Entities.Employee>()
-                .ForMember(x => x.ID, y => y.MapFrom(z => z.EmployeeID))
+                .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.FirstName, y => y.MapFrom(z => z.FirstName))
                 .ForMember(x => x.LastName, y => y.MapFrom(z => z.LastName))
                 .ForMember(x => x.Role, y => y.MapFrom(z => z.Role))

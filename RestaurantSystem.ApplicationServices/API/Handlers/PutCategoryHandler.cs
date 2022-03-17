@@ -41,12 +41,15 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             {
                 var isCategoryInDb = new GetCategoryByIdQuery()
                 {
-                    CategoryID = request.CategoryID
+                    ID = request.ID
                 };
                 var categoryID = await queryExecutor.Execute(isCategoryInDb);
                 if (categoryID == null)
                 {
-                    return null;
+                    return new PutCategoryResponse() 
+                    {
+                        Error = new ErrorModel(ErrorType.NotFound)
+                    };
                 }
                 else
                 {

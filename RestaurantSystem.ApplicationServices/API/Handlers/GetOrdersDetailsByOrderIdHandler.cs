@@ -28,7 +28,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         {
             var query = new GetOrdersDetailsByOrderIdQuery()
             {
-                OrderID = request.OrderID
+                ID = request.ID
             };
             var ordersDetails = await this.queryExecutor.Execute(query);
             if (ordersDetails == null)

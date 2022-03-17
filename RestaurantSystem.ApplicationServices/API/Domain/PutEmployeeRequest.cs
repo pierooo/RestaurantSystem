@@ -9,7 +9,7 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
 {
     public class PutEmployeeRequest : RequestBase, IRequest<PutEmployeeResponse>
     {
-        public int EmployeeID { get; set; }
+        public int ID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public RestaurantSystemDataAccess.Entities.Role Role { get; set; }

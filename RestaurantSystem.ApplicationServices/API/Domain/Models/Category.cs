@@ -8,7 +8,7 @@ namespace RestaurantSystem.ApplicationServices.API.Domain.Models
 {
     public class Category
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
     }

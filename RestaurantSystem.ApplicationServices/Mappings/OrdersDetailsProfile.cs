@@ -14,7 +14,7 @@ namespace RestaurantSystem.ApplicationServices.Mappings
         public OrdersDetailsProfile()
         {
             this.CreateMap<PutOrderDetailsRequest, RestaurantSystemDataAccess.Entities.OrderDetails>()
-                .ForMember(x => x.ID, y => y.MapFrom(z => z.OrderDetailsID))
+                .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.OrderID, y => y.MapFrom(z => z.OrderID))
                 .ForMember(x => x.ProductID, y => y.MapFrom(z => z.ProductID))
                 .ForMember(x => x.Quantity, y => y.MapFrom(z => z.Quantity));

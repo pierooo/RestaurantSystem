@@ -24,22 +24,22 @@ namespace RestaurantSystem.Controllers
             return this.HandleRequest<GetOrdersDetailsRequest, GetOrdersDetailsResponse>(request);
         }
         [HttpGet]
-        [Route("GetByOrderDetailsId/{orderDetailsID}")]
-        public Task<IActionResult> GetOrdersDetailsById([FromRoute] int orderDetailsID)
+        [Route("GetByOrderDetailsId/{ID}")]
+        public Task<IActionResult> GetOrdersDetailsById([FromRoute] int id)
         {
             var request = new GetOrderDetailsByIdRequest()
             {
-                OrderDetailsID = orderDetailsID
+                ID = id
             };
             return this.HandleRequest<GetOrderDetailsByIdRequest, GetOrderDetailsByIdResponse>(request);
         }
         [HttpGet]
-        [Route("GetByOrderId/{orderID}")]
-        public Task<IActionResult> GetOrdersDetailsByOrderId([FromRoute] int orderID)
+        [Route("GetByOrderId/{ID}")]
+        public Task<IActionResult> GetOrdersDetailsByOrderId([FromRoute] int id)
         {
             var request = new GetOrdersDetailsByOrderIdRequest()
             {
-                OrderID = orderID
+                ID = id
             };
             return this.HandleRequest<GetOrdersDetailsByOrderIdRequest, GetOrdersDetailsByOrderIdResponse>(request);
         }
@@ -56,12 +56,12 @@ namespace RestaurantSystem.Controllers
             return this.HandleRequest<PutOrderDetailsRequest, PutOrderDetailsResponse>(request);
         }
         [HttpDelete]
-        [Route("{orderDetailsID}")]
-        public Task<IActionResult> DeleteOrderDetails([FromRoute] int orderDetailsID)
+        [Route("{ID}")]
+        public Task<IActionResult> DeleteOrderDetails([FromRoute] int id)
         {
             var request = new DeleteOrderDetailsRequest()
             {
-                OrderDetailsID = orderDetailsID
+                ID = id
             };
             return this.HandleRequest<DeleteOrderDetailsRequest, DeleteOrderDetailsResponse>(request);
         }

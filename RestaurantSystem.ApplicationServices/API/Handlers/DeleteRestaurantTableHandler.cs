@@ -38,7 +38,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             {
                 var isRestaurantTableInDb = new GetRestaurantTableByIdQuery()
                 {
-                    RestaurantTableID = request.RestaurantTableID
+                    ID = request.ID
                 };
                 var restaurantTable = await queryExecutor.Execute(isRestaurantTableInDb);
                 if (restaurantTable == null)

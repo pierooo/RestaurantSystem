@@ -26,12 +26,12 @@ namespace RestaurantSystem.Controllers
         }
         
         [HttpGet]
-        [Route("{employeeID}")]
-        public Task<IActionResult> GetEmployeeByID([FromRoute] int employeeID)
+        [Route("{ID}")]
+        public Task<IActionResult> GetEmployeeByID([FromRoute] int id)
         {
             var request = new GetEmployeeByIdRequest()
             {
-                EmployeeID = employeeID
+                ID = id
             };
             return this.HandleRequest<GetEmployeeByIdRequest, GetEmployeeByIdResponse>(request);
         }
@@ -49,15 +49,23 @@ namespace RestaurantSystem.Controllers
             return this.HandleRequest<PutEmployeeRequest, PutEmployeeResponse>(request);
         }
         [HttpDelete]
-        [Route("{employeeID}")]
-        public Task<IActionResult> DeleteEmployee([FromRoute] int employeeID)
+        [Route("{ID}")]
+        public Task<IActionResult> DeleteEmployee([FromRoute] int id)
         {
             var request = new DeleteEmployeeRequest()
             {
-                EmployeeID = employeeID
+                ID = id
             };
             return this.HandleRequest<DeleteEmployeeRequest, DeleteEmployeeResponse>(request);
         }
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("authenticate")]
+        public Task<IActionResult> Post([FromBody] ValidateEmployeeRequest request)
+        {
+            return this.HandleRequest<ValidateEmployeeRequest, ValidateEmployeeResponse>(request);
+        }
+
 
     }
 }

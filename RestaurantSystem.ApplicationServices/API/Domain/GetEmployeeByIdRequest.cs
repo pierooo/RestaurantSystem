@@ -5,6 +5,6 @@ namespace RestaurantSystem.Controllers
 {
     public class GetEmployeeByIdRequest : RequestBase, IRequest<GetEmployeeByIdResponse>
     {
-        public int EmployeeID { get; set; }
+        public int ID { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace RestaurantSystem.ApplicationServices.Mappings
             .ForMember(x => x.Discontinued, y => y.MapFrom(z => z.Discontinued));
 
             this.CreateMap<PutProductRequest, RestaurantSystemDataAccess.Entities.Product>()
-            .ForMember(x => x.ID, y => y.MapFrom(z => z.ProductID))
+            .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
             .ForMember(x => x.ProductName, y => y.MapFrom(z => z.ProductName))
             .ForMember(x => x.UnitPriceNetto, y => y.MapFrom(z => z.UnitPriceNetto))
             .ForMember(x => x.VAT, y => y.MapFrom(z => z.VAT))

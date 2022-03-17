@@ -43,7 +43,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
             {
                 var isProductInDb = new GetProductByIdQuery()
                 {
-                    ProductID = request.ProductID
+                    ID = request.ID
                 };
                 var productID = await queryExecutor.Execute(isProductInDb);
                 if (productID == null)

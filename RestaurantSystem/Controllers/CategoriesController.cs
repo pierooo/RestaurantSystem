@@ -24,12 +24,12 @@ namespace RestaurantSystem.Controllers
             return this.HandleRequest<GetCategoriesRequest, GetCategoriesResponse>(request);
         }
         [HttpGet]
-        [Route("{categoryID}")]
-        public Task<IActionResult> GetCategoryById([FromRoute] int categoryID)
+        [Route("{ID}")]
+        public Task<IActionResult> GetCategoryById([FromRoute] int id)
         {
             var request = new GetCategoryByIdRequest()
             {
-                CategoryID = categoryID
+                ID = id
             };
             return this.HandleRequest<GetCategoryByIdRequest, GetCategoryByIdResponse>(request);
         }
@@ -46,12 +46,12 @@ namespace RestaurantSystem.Controllers
             return this.HandleRequest<PutCategoryRequest, PutCategoryResponse>(request);
         }
         [HttpDelete]
-        [Route("{categoryID}")]
-        public Task<IActionResult> DeleteCategory([FromRoute] int categoryID)
+        [Route("{ID}")]
+        public Task<IActionResult> DeleteCategory([FromRoute] int id)
         {
             var request = new DeleteCategoryRequest()
             {
-                CategoryID = categoryID
+                ID = id
             };
             return this.HandleRequest<DeleteCategoryRequest, DeleteCategoryResponse>(request);
         }

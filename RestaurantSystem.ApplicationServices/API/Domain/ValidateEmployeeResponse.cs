@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿using RestaurantSystem.ApplicationServices.API.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantSystem.ApplicationServices.API.Domain
 {
-    public class DeleteCategoryRequest : RequestBase, IRequest<DeleteCategoryResponse>
+    public class ValidateEmployeeResponse : ResponseBase<Employee>
     {
-        public int ID { get; set; }
     }
 }

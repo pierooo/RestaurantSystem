@@ -10,13 +10,13 @@ namespace RestaurantSystemDataAccess.CQRS.Queries
 {
     public class GetOrderDetailsByIdQuery : QueryBase<OrderDetails>
     {
-        public int OrderDetailsID { get; set; }
+        public int ID { get; set; }
         public override async Task<OrderDetails> Execute(OrdersStorageContext context)
         {
             var orderDetails = await context.OrdersDetails
                 .Include(x => x.Order)
                 .Include(x => x.Product)
-                .FirstOrDefaultAsync(x => x.ID == this.OrderDetailsID);
+                .FirstOrDefaultAsync(x => x.ID == this.ID);
             return orderDetails;
         }
     }

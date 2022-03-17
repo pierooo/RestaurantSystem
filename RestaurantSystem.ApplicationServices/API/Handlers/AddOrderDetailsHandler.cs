@@ -32,13 +32,13 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
         {
             var queryProduct = new GetProductByIdQuery()
             {
-                ProductID = request.ProductID
+                ID = request.ProductID
             };
             var product = await this.queryExecutor.Execute(queryProduct);
 
             var queryOrder = new GetOrderByIdQuery()
             {
-                OrderID = request.OrderID
+                ID = request.OrderID
             };
             var order = await this.queryExecutor.Execute(queryOrder);
             if(product != null && order != null)
