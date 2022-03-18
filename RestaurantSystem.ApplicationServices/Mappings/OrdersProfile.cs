@@ -17,7 +17,9 @@ namespace RestaurantSystem.ApplicationServices.Mappings
                 .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
                 .ForMember(x => x.ID, y => y.MapFrom(z => z.ID))
-                .ForMember(x => x.Description, y => y.MapFrom(z => z.Description));
+                .ForMember(x => x.Description, y => y.MapFrom(z => z.Description))
+                .ForMember(x => x.Completed, y => y.MapFrom(z => z.Completed));
+
             this.CreateMap<AddOrderRequest, RestaurantSystemDataAccess.Entities.Order>()
                 .ForMember(x => x.EmployeeID, y => y.MapFrom(z => z.EmployeeID))
                 .ForMember(x => x.RestaurantTableID, y => y.MapFrom(z => z.RestaurantTableID))
@@ -29,7 +31,9 @@ namespace RestaurantSystem.ApplicationServices.Mappings
                 .ForMember(x => x.OrderDate, y => y.MapFrom(z => z.OrderDate))
                 .ForMember(x => x.TotalPriceNetto, y => y.MapFrom(z => z.TotalPriceNetto))
                 .ForMember(x => x.TotalPriceBrutto, y => y.MapFrom(z => z.TotalPriceBrutto))
-                .ForMember(x => x.Description, y => y.MapFrom(z => z.Description));
+                .ForMember(x => x.Description, y => y.MapFrom(z => z.Description))
+                .ForMember(x => x.Completed, y => y.MapFrom(z => z.Completed))
+;
         }
     }
 }

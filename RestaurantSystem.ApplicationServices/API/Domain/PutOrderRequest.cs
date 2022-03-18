@@ -13,5 +13,6 @@ namespace RestaurantSystem.ApplicationServices.API.Domain
         public int EmployeeID { get; set; }
         public int RestaurantTableID { get; set; }
         public string Description { get; set; }
+        public bool Completed { get; set; }
     }
 }
