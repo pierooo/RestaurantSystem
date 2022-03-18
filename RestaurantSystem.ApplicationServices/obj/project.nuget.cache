@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sLRqaMESRCophFtTdjBOktq7iTFEIX1u5QpJI8CmctZg315X0gqy7sAtQzeA3bRataUD9rU+gKkjp7PwkoOwNA==",
+  "dgSpecHash": "B8wSivFDTRZyDF44cb+CTTmcvq+vLiuyPk4Ai7GVWHK2FsWM4evjKrSB4v4AcUYS2/Jqt5WGqnFjl5idqWdbEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
+  "projectFilePath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenovo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\lenovo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

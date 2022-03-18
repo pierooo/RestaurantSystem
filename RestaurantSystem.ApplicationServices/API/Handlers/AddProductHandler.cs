@@ -43,7 +43,7 @@ namespace RestaurantSystem.ApplicationServices.API.Handlers
                 {
                     ID = request.CategoryID
                 };
-                var category = this.queryExecutor.Execute(query);
+                var category = await this.queryExecutor.Execute(query);
                 if(category != null)
                 {
                     var product = this.mapper.Map<Product>(request);

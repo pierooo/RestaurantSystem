@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj": {}
+    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem\\RestaurantSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
         "projectName": "RestaurantSystem.ApplicationServices",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\obj\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj"
+              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj",
         "projectName": "RestaurantSystemDataAccess",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\obj\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -198,14 +198,14 @@
         }
       }
     },
-    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem\\RestaurantSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem\\RestaurantSystem.csproj",
         "projectName": "RestaurantSystem",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem\\RestaurantSystem.csproj",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem\\RestaurantSystem.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem\\obj\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -227,11 +227,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj"
+              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystem.ApplicationServices\\RestaurantSystem.ApplicationServices.csproj"
               },
-              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
-                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium2\\RestaurantSystem\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj"
+              "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj": {
+                "projectPath": "C:\\Users\\lenovo\\Desktop\\kursZaczynamKariere\\Repozytoria\\Repozytorium3\\RestaurantSystemDataAccess\\RestaurantSystemDataAccess.csproj"
               }
             }
           }

@@ -21,6 +21,7 @@ namespace RestaurantSystemDataAccess.Entities
         public decimal TotalPriceBrutto { get; set; }
         [MaxLength(500)]
         public string Description { get; set; }
+        public bool Completed { get; set; }
 
     }
 }

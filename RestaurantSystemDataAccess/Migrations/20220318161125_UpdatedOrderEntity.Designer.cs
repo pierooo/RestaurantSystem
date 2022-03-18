@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurantSystemDataAccess;
 
 namespace RestaurantSystemDataAccess.Migrations
 {
     [DbContext(typeof(OrdersStorageContext))]
-    partial class OrdersStorageContextModelSnapshot : ModelSnapshot
+    [Migration("20220318161125_UpdatedOrderEntity")]
+    partial class UpdatedOrderEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
