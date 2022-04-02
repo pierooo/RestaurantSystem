@@ -17,7 +17,6 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\bin\Debug\net5.0\RestaurantSystemDataAccess.runtimeconfig.json
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\bin\Debug\net5.0\RestaurantSystemDataAccess.runtimeconfig.dev.json
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\bin\Debug\net5.0\RestaurantSystemDataAccess.dll
-C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\bin\Debug\net5.0\ref\RestaurantSystemDataAccess.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\bin\Debug\net5.0\RestaurantSystemDataAccess.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\RestaurantSystemDataAccess.csproj.AssemblyReference.cache
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\RestaurantSystemDataAccess.GeneratedMSBuildEditorConfig.editorconfig
@@ -28,3 +27,4 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\ref\RestaurantSystemDataAccess.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\RestaurantSystemDataAccess.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\RestaurantSystemDataAccess.genruntimeconfig.cache
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystemDataAccess\obj\Debug\net5.0\refint\RestaurantSystemDataAccess.dll

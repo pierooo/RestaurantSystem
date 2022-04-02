@@ -86,7 +86,6 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\RestaurantSystem.runtimeconfig.json
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\RestaurantSystem.runtimeconfig.dev.json
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\RestaurantSystem.dll
-C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\ref\RestaurantSystem.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\RestaurantSystem.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
@@ -146,7 +145,6 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\staticwebassets\RestaurantSystem.StaticWebAssets.Manifest.cache
-C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\staticwebassets\RestaurantSystem.StaticWebAssets.xml
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\scopedcss\bundle\RestaurantSystem.styles.css
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.RazorTargetAssemblyInfo.cache
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.dll
@@ -154,3 +152,4 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.genruntimeconfig.cache
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\RestaurantSystem.csproj.CopyComplete
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem\obj\Debug\net5.0\refint\RestaurantSystem.dll

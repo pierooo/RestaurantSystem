@@ -18,7 +18,6 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\Components\PasswordHash\PasswordHash.cs
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.deps.json
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.dll
-C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\ref\RestaurantSystem.ApplicationServices.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystemDataAccess.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\bin\Debug\net5.0\RestaurantSystemDataAccess.pdb
@@ -30,3 +29,5 @@ C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\Restaurant
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\ref\RestaurantSystem.ApplicationServices.dll
 C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.pdb
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\RestaurantSystem.ApplicationServices.csproj.CopyComplete
+C:\Users\lenovo\Desktop\kursZaczynamKariere\Repozytoria\Repozytorium3\RestaurantSystem.ApplicationServices\obj\Debug\net5.0\refint\RestaurantSystem.ApplicationServices.dll

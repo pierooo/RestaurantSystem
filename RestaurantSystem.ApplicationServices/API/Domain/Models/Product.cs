@@ -8,7 +8,7 @@ namespace RestaurantSystem.ApplicationServices.API.Domain.Models
 {
     public class Product
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string ProductName { get; set; }
         public int CategoryID { get; set; }
         public decimal UnitPriceNetto { get; set; }
